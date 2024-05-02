@@ -50,6 +50,7 @@ public interface VehicleRoutingActivityCosts {
      * <p>
      * <p>Here waiting-times, service-times and missed time-windows can be considered.
      *
+     * @param prevAct
      * @param tourAct
      * @param arrivalTime is actually the arrival time at this tourActivity, which must not nessecarrily be the operation start time. If the theoretical earliest
      *                    operation start time at this activity is later than actualStartTime, the driver must wait at this activity.
@@ -57,7 +58,7 @@ public interface VehicleRoutingActivityCosts {
      * @param vehicle     if earliestStartTime > latestStartTime activity operations cannot be conducted within the given time-window.
      * @return
      */
-    public double getActivityCost(TourActivity tourAct, double arrivalTime, Driver driver, Vehicle vehicle);
+    public double getActivityCost(TourActivity prevAct, TourActivity tourAct, double arrivalTime, Driver driver, Vehicle vehicle);
 
     public double getActivityDuration(TourActivity tourAct, double arrivalTime, Driver driver, Vehicle vehicle);
 

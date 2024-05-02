@@ -35,7 +35,7 @@ public class ExampleActivityCostFunction implements VehicleRoutingActivityCosts 
 
 
     @Override
-    public double getActivityCost(TourActivity tourAct, double arrivalTime, Driver driver, Vehicle vehicle) {
+    public double getActivityCost(TourActivity prevAct, TourActivity tourAct, double arrivalTime, Driver driver, Vehicle vehicle) {
         if (arrivalTime == Time.TOURSTART || arrivalTime == Time.UNDEFINED) {
             return 0.0;
         } else {
